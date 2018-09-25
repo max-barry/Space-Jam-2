@@ -1,6 +1,6 @@
 You got the typeface from Nate Rattner https://github.com/naterattner
 
-Put fake ads at the top. Make them look like 1997 banner ads.
+Put fake ads at the top where the original site had them. Make them look like 1997 banner ads.
 You can block the ad, but it's Dikembe Mutombo finger wagging. That's a dumb idea.
 
 When you click a button on a page not made, have it fall off screen like gravity.
