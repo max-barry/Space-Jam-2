@@ -1,18 +1,27 @@
 import React from 'react';
 import styled from 'react-emotion';
+import PropTypes from 'prop-types';
 import { withStateHandlers } from 'recompose';
 import { colors } from '../../settings';
 
-const Button = styled('button')({
+const Container = styled('a')({
     maxWidth: 96,
     transition: 'backgroundColor 80ms',
+    display: 'block',
+    fontSize: 12,
+    textAlign: 'center',
+    cursor: 'pointer',
     '&:focus, &:active, &:hover': {
         outline: 0,
         backgroundColor: 'rgba(255, 255, 255, 0.2)'
     }
 });
 
-const Icon = styled('img')({ pointerEvents: 'none' });
+const Icon = styled('img')({
+    pointerEvents: 'none',
+    marginRight: 'auto',
+    marginLeft: 'auto'
+});
 
 const Text = styled('span')(
     {
@@ -32,20 +41,22 @@ const IconButtons = ({
     ifActive,
     ifNotActive,
     active,
+    label,
     makeActive,
     makeNotActive,
     ...props
 }) => (
-    <Button
-        {...props}
+    <Container
+        tabIndex={1}
         onMouseOver={makeActive}
         onMouseOut={makeNotActive}
         onFocus={makeActive}
         onBlur={makeNotActive}
+        {...props}
     >
-        <Text>Lunar Tunes</Text>
+        <Text>{label}</Text>
         <Icon src={active ? ifActive : ifNotActive} />
-    </Button>
+    </Container>
 );
 
 const enhance = withStateHandlers(({ active = false }) => ({ active }), {
@@ -56,5 +67,13 @@ const enhance = withStateHandlers(({ active = false }) => ({ active }), {
         active: false
     })
 });
+
+IconButtons.defaultProps = {};
+
+IconButtons.propTypes = {
+    label: PropTypes.string.isRequired,
+    ifActive: PropTypes.string.isRequired,
+    ifNotActive: PropTypes.string.isRequired
+};
 
 export default enhance(IconButtons);
