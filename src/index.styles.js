@@ -1,4 +1,6 @@
 import { injectGlobal } from 'react-emotion';
+import grobolWoff from './fonts/grobold.woff';
+import grobolWoff2 from './fonts/grobold.woff2';
 
 const fontFamily = `'GROBOLD', sans-serif`;
 
@@ -55,8 +57,8 @@ injectGlobal`
         font-family: "GROBOLD";
         font-style: normal;
         font-weight: normal;
-        src: url(/fonts/grobold.woff2) format('woff2'),
-             url(/fonts/grobold.woff) format('woff');
+        src: url(${grobolWoff2}) format('woff2'),
+             url(${grobolWoff}) format('woff');
         font-display: optional;
     }
 
