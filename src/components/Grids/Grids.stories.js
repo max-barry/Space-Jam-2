@@ -6,17 +6,14 @@ import IconButton from '../Buttons/IconButton';
 import jamlogo from '../../images/logos/jamlogo.gif';
 import { planetPaths, planetWiggleMap } from '../../settings';
 
-const dummyPlanetButtons = planetPaths.map(
-    ([label, path, activePath], i) =>
-        console.log(path) || (
-            <IconButton
-                key={`plane_${i}`}
-                label={label}
-                ifNotActive={path}
-                ifActive={activePath}
-            />
-        )
-);
+const dummyPlanetButtons = planetPaths.map(([label, path, activePath], i) => (
+    <IconButton
+        key={`plane_${i}`}
+        label={label}
+        ifNotActive={path}
+        ifActive={activePath}
+    />
+));
 
 storiesOf('Grids', module)
     .addDecorator(centered)

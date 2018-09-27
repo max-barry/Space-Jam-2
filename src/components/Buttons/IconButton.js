@@ -5,12 +5,14 @@ import { withStateHandlers } from 'recompose';
 import { colors } from '../../settings';
 
 const Container = styled('a')({
-    maxWidth: 96,
+    maxWidth: 115,
     transition: 'backgroundColor 80ms',
     display: 'block',
     fontSize: 12,
     textAlign: 'center',
     cursor: 'pointer',
+    padding: 12,
+    borderRadius: 3,
     '&:focus, &:active, &:hover': {
         outline: 0,
         backgroundColor: 'rgba(255, 255, 255, 0.2)'
@@ -21,13 +23,16 @@ const Icon = styled('img')({
     pointerEvents: 'none',
     marginRight: 'auto',
     marginLeft: 'auto'
+    // width: '100%'
 });
 
 const Text = styled('span')(
     {
         color: colors.secondary,
         textTransform: 'uppercase',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        marginBottom: 3,
+        display: 'block'
     },
     `
     -moz-text-stroke-color: black;
