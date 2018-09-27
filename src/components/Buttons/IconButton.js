@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStateHandlers } from 'recompose';
 import { colors } from '../../settings';
 
-const Container = styled('a')({
+const StyledLink = styled(Link)({
     maxWidth: 115,
     transition: 'backgroundColor 80ms',
     display: 'block',
@@ -13,9 +14,11 @@ const Container = styled('a')({
     cursor: 'pointer',
     padding: 12,
     borderRadius: 3,
+    textDecoration: 'none',
     '&:focus, &:active, &:hover': {
         outline: 0,
-        backgroundColor: 'rgba(255, 255, 255, 0.2)'
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        textDecoration: 'none'
     }
 });
 
@@ -49,19 +52,21 @@ const IconButtons = ({
     label,
     makeActive,
     makeNotActive,
+    to,
     ...props
 }) => (
-    <Container
+    <StyledLink
         tabIndex={1}
         onMouseOver={makeActive}
         onMouseOut={makeNotActive}
         onFocus={makeActive}
         onBlur={makeNotActive}
+        to={to}
         {...props}
     >
         <Text>{label}</Text>
         <Icon src={active ? ifActive : ifNotActive} />
-    </Container>
+    </StyledLink>
 );
 
 const enhance = withStateHandlers(({ active = false }) => ({ active }), {
@@ -78,7 +83,8 @@ IconButtons.defaultProps = {};
 IconButtons.propTypes = {
     label: PropTypes.string.isRequired,
     ifActive: PropTypes.string.isRequired,
-    ifNotActive: PropTypes.string.isRequired
+    ifNotActive: PropTypes.string.isRequired,
+    to: PropTypes.string.isRequired
 };
 
 export default enhance(IconButtons);
