@@ -16,11 +16,11 @@ import lunartunesActive from './images/planets/lunartunes--active.gif';
 import pressboxActive from './images/planets/pressbox--active.gif';
 import sitemapActive from './images/planets/sitemap--active.gif';
 // TODO : Add these paths
-import behindActive from './images/planets/lunartunes--active.gif';
-import juniorActive from './images/planets/lunartunes--active.gif';
-import lineupActive from './images/planets/lunartunes--active.gif';
-import souvenirsActive from './images/planets/lunartunes--active.gif';
-import studiostoreActive from './images/planets/lunartunes--active.gif';
+import behindActive from './images/planets/behind.gif';
+import juniorActive from './images/planets/junior.gif';
+import lineupActive from './images/planets/lineup.gif';
+import souvenirsActive from './images/planets/souvenirs.gif';
+import studiostoreActive from './images/planets/studiostore.gif';
 
 export const colors = {
     secondary: '#fefe08'
